@@ -1,0 +1,109 @@
+@layer theme.preview {
+  /*
+   * Gruvbox — rendered Markdown preview.
+   *
+   * The preview inherits the UI tokens, so this file only covers what should
+   * diverge: gruvbox paints markdown H1/H2 green and H3–H6 yellow, inline code
+   * aqua, and links blue.
+   */
+  :root {
+    --mde-preview-link-color: var(--color-blue-500);
+
+    /* GFM alerts — note/tip/warning/caution already resolve through the ramps */
+    --gfm-alert-important: var(--color-violet-500);
+
+    /* Headings */
+    --mde-preview-heading-color: var(--color-green-500);
+    --mde-preview-heading-border-color: var(--color-neutral-800);
+    --mde-preview-heading-muted-text-color: var(--color-neutral-400);
+
+    /* Prose */
+    --mde-preview-strong-color: var(--color-neutral-50);
+    --mde-preview-em-color: var(--color-neutral-300);
+    --mde-preview-blockquote-text-color: var(--color-neutral-400);
+    --mde-preview-blockquote-border-color: var(--color-neutral-700);
+    --mde-preview-hr-background-color: var(--color-neutral-800);
+    --mde-preview-hr-border-color: var(--color-neutral-800);
+    --mde-preview-task-list-checked-color: var(--color-green-500);
+
+    /* Code */
+    --mde-preview-codeblock-background-color: hsl(var(--hsl-neutral-900) / 60%);
+    --mde-preview-codeblock-border-color: var(--color-neutral-800);
+    --mde-preview-codeblock-meta-background-color: var(--color-neutral-900);
+    --mde-preview-codeblock-meta-text-color: var(--color-neutral-400);
+    --mde-preview-inline-code-text-color: var(--color-teal-500); /* markdownCode */
+    --mde-preview-inline-code-border-width: 1px;
+    --mde-preview-inline-code-border-color: hsl(var(--hsl-neutral-700) / 60%);
+    --mde-preview-inline-code-background-color: hsl(var(--hsl-neutral-800) / 40%);
+
+    /* Tables */
+    --mde-preview-table-border-color: var(--color-neutral-800);
+    --mde-preview-table-row-border-color: var(--color-neutral-800);
+    --mde-preview-table-head-text-color: var(--color-yellow-500);
+    --mde-preview-table-head-background-color: var(--color-neutral-900);
+    --mde-preview-table-row-background-color: transparent;
+    --mde-preview-table-row-stripe-background-color: hsl(var(--hsl-neutral-900) / 50%);
+
+    /* Keyboard keys */
+    --mde-preview-kbd-background-color: var(--color-neutral-800);
+    --mde-preview-kbd-border-color: var(--color-neutral-700);
+    --mde-preview-kbd-shadow-color: var(--color-neutral-950);
+    --mde-preview-kbd-text-color: var(--color-neutral-200);
+
+    /* Mark */
+    --mde-preview-inline-mark-background-color: hsl(var(--hsl-yellow-500) / 25%);
+    --mde-preview-inline-mark-underline-color: var(--color-yellow-500);
+
+    /* Images & footnotes */
+    --mde-preview-image-background-color: var(--color-neutral-900);
+    --mde-preview-footnote-border-color: var(--color-neutral-800);
+    --mde-preview-footnote-highlight-border-color: var(--color-yellow-500);
+    --mde-preview-footnote-text-color: var(--color-neutral-400);
+
+    /*
+     * Mermaid diagrams. mermaid.css cascades most of its tokens off these few
+     * base ones, and its remaining families already resolve through the ramps
+     * tokens.css remaps — so only the bases and the seed palette are set here.
+     */
+    --mermaid-line-color: var(--color-neutral-400);
+    --mermaid-node-background-color: var(--color-neutral-900);
+    --mermaid-node-border-color: var(--color-blue-500);
+    --mermaid-cluster-background-color: hsl(var(--hsl-neutral-800) / 40%);
+    --mermaid-cluster-border-color: var(--color-neutral-700);
+    --mermaid-edge-label-background-color: var(--color-neutral-950);
+
+    /* Notes (sequence / state) — gruvbox yellow */
+    --mermaid-note-background-color: hsl(var(--hsl-yellow-900));
+    --mermaid-note-border-color: var(--color-yellow-700);
+    --mermaid-note-text-color: var(--color-yellow-200);
+
+    /* Sequence label box — gruvbox purple */
+    --mermaid-label-box-background-color: hsl(var(--hsl-violet-900));
+    --mermaid-label-box-border-color: var(--color-violet-600);
+    --mermaid-label-text-color: var(--color-violet-200);
+
+    /* Gantt */
+    --mermaid-section-background-color: hsl(var(--hsl-neutral-800) / 50%);
+    --mermaid-alt-section-background-color: hsl(var(--hsl-neutral-800) / 25%);
+    --mermaid-grid-color: var(--color-neutral-800);
+    --mermaid-today-line-color: var(--color-orange-500);
+
+    /* Seed palette — pie / git / quadrant / journey categorical scales */
+    --mermaid-primary-color: hsl(var(--hsl-blue-800));
+    --mermaid-secondary-color: hsl(var(--hsl-violet-800));
+    --mermaid-tertiary-color: hsl(var(--hsl-green-800));
+
+    /* The two families that reach for amber, which gruvbox has no hue for */
+    --mermaid-em-event-background-color: hsl(var(--hsl-yellow-950));
+    --mermaid-em-event-border-color: var(--color-yellow-600);
+    --mermaid-cynefin-clear-background-color: hsl(var(--hsl-yellow-950));
+  }
+
+  /*
+   * gruvbox.vim paints markdownH1/H2 green and markdownH3–H6 yellow; the
+   * preview only exposes one heading color, so the rest is a plain rule.
+   */
+  .mde-preview :is(h3, h4, h5, h6) {
+    color: var(--color-yellow-500);
+  }
+}

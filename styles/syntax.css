@@ -1,0 +1,213 @@
+@layer theme.syntax {
+  /*
+   * Gruvbox — editor chrome and syntax highlighting.
+   *
+   * Token colors follow the highlight groups in gruvbox's own `colors/gruvbox.vim`
+   * (dark background, medium contrast), so the neutral stops map to gruvbox's
+   * scale as: 100 = fg1, 200 = fg2, 300 = fg3, 400 = fg4, 500 = gray,
+   * 600 = bg4, 700 = bg3, 800 = bg2, 900 = bg1, 950 = bg0.
+   */
+  :root {
+    /*── Editor chrome ────────────────────────────────────────────────────────*/
+    --editor-foreground-color: var(--color-neutral-100); /* Normal */
+    --editor-background-color: var(--color-neutral-950);
+    --editor-caret-color: var(--color-neutral-100);
+    --editor-selection-background: var(--color-neutral-800);
+    --editor-focused-selection-background: var(
+      --color-neutral-700
+    ); /* Visual */
+    --editor-active-line-background-color: hsl(
+      var(--hsl-neutral-900) / 60%
+    ); /* CursorLine */
+    --editor-special-char-color: var(--color-neutral-800); /* NonText */
+    --editor-spelling-error-color: var(--color-red-500);
+
+    --editor-gutter-border-right: none;
+    --editor-gutter-color: var(--color-neutral-600); /* LineNr */
+    --editor-gutter-background-color: transparent;
+    --editor-gutter-background-solid-color: var(--color-neutral-950);
+    --editor-active-line-gutter-background-color: hsl(
+      var(--hsl-neutral-900) / 60%
+    );
+
+    --editor-panel-background-color: var(--color-neutral-900);
+    --editor-panel-color: var(--color-neutral-300);
+    --editor-panel-border-color: var(--border-color);
+
+    --editor-tooltip-border-color: var(--color-neutral-700);
+    --editor-tooltip-background-color: var(--color-neutral-900); /* Pmenu */
+    --editor-tooltip-autocomplete-item-selected-background-color: var(
+      --color-blue-600
+    ); /* PmenuSel */
+    --editor-tooltip-autocomplete-item-selected-color: var(--color-neutral-950);
+    --editor-tooltip-autocomplete-section-border-color: var(
+      --color-neutral-700
+    );
+    --editor-inline-tooltip-color: var(--color-neutral-300);
+    --editor-inline-tooltip-background-color: hsl(var(--hsl-neutral-900) / 60%);
+    --editor-inline-tooltip-outline: 1px solid var(--color-neutral-700);
+
+    --editor-completion-label: var(--color-neutral-200);
+    --editor-completion-matched-text-color: var(--color-yellow-500);
+    --editor-completion-detail-color: var(--color-neutral-500);
+
+    --editor-matching-bracket-outline: none; /* MatchParen */
+    --editor-matching-bracket-background-color: var(--color-neutral-700);
+    --editor-nonmatching-bracket-outline: 1px solid var(--color-red-500);
+
+    --editor-selection-match-background-color: hsl(
+      var(--hsl-neutral-700) / 70%
+    );
+    --editor-search-match-background-color: hsl(
+      var(--hsl-yellow-500) / 35%
+    ); /* Search */
+    --editor-search-match-selected-background-color: hsl(
+      var(--hsl-orange-500) / 50%
+    ); /* IncSearch */
+    --editor-search-match-selected-outline: 1px solid var(--color-orange-500);
+
+    --editor-placeholder-color: var(--color-neutral-600);
+    --editor-nes-ghost-color: var(--color-neutral-600);
+
+    --editor-highlight-space-color: var(--color-neutral-800);
+    --editor-trailing-space-background-color: hsl(var(--hsl-red-600) / 40%);
+
+    --editor-fold-placeholder-color: var(--color-neutral-400); /* Folded */
+    --editor-fold-placeholder-background-color: var(--color-neutral-900);
+    --editor-fold-placeholder-border: 1px solid var(--color-neutral-700);
+
+    --editor-image-widget-backdrop-background-color: hsl(
+      var(--hsl-neutral-800) / 40%
+    );
+    --editor-image-widget-backdrop-border: 1px solid
+      hsl(var(--hsl-neutral-700) / 60%);
+
+    /*── Markdown elements ────────────────────────────────────────────────────*/
+    --md-inline-code-border-color: hsl(var(--hsl-neutral-700) / 60%);
+    --md-inline-code-background-color: hsl(var(--hsl-neutral-800) / 40%);
+    --md-codeblock-border-color: var(--color-neutral-800);
+    --md-codeblock-background-color: hsl(var(--hsl-neutral-900) / 60%);
+
+    --md-inline-mark-background-color: hsl(var(--hsl-yellow-500) / 25%);
+    --md-inline-mark-underline-color: var(--color-yellow-500);
+
+    --md-table-border-color: var(--color-neutral-800);
+    --md-table-background-color: hsl(var(--hsl-neutral-900) / 60%);
+
+    --md-blockquote-border-color: var(--color-neutral-600);
+    --md-list-mark-color: var(--color-neutral-500); /* markdownListMarker */
+
+    /*── Syntax tokens ────────────────────────────────────────────────────────*/
+
+    /* Comments — gray, italic */
+    --syntax-comment-color: var(--color-neutral-500);
+
+    /* Names — definitions green (Function), constants purple, builtins aqua */
+    --syntax-name-constant-color: var(--color-violet-500);
+    --syntax-name-standard-color: var(--color-teal-500);
+    --syntax-name-definition-color: var(--color-green-500);
+    --syntax-name-function-color: var(--color-green-500);
+    --syntax-name-special-color: var(--color-orange-500);
+
+    /* Variable names — blue (Identifier) */
+    --syntax-variable-name-color: var(--color-blue-500);
+    --syntax-variable-name-constant-color: var(--color-violet-500);
+    --syntax-variable-name-standard-color: var(--color-orange-500);
+    --syntax-variable-name-function-color: var(--color-green-500);
+    --syntax-variable-name-special-color: var(--color-orange-500);
+
+    /* Property names — plain, except the ones that read as calls or constants */
+    --syntax-property-name-constant-color: var(--color-violet-500);
+    --syntax-property-name-standard-color: var(--color-teal-500);
+    --syntax-property-name-function-color: var(--color-green-500);
+
+    /* Other names */
+    --syntax-tag-name-color: var(--color-teal-500); /* htmlTagName */
+    --syntax-attribute-name-color: var(--color-teal-500); /* htmlArg */
+    --syntax-class-name-color: var(--color-yellow-500); /* Type */
+    --syntax-label-name-color: var(--color-red-500); /* Label */
+    --syntax-namespace-color: var(--color-teal-500);
+    --syntax-macro-name-color: var(--color-teal-500); /* Macro */
+
+    /* Strings — green, escapes orange (Special) */
+    --syntax-string-color: var(--color-green-500);
+    --syntax-string-special-color: var(--color-orange-500);
+
+    /* Numbers & literals — purple (Constant) */
+    --syntax-number-color: var(--color-violet-500);
+    --syntax-literal-color: var(--color-violet-500);
+    --syntax-character-color: var(--color-violet-500);
+    --syntax-integer-color: var(--color-violet-500);
+    --syntax-float-color: var(--color-violet-500);
+    --syntax-bool-color: var(--color-violet-500);
+    --syntax-color-color: var(--color-violet-500);
+    --syntax-regexp-color: var(--color-green-500);
+    --syntax-url-color: var(--color-violet-500); /* markdownUrl */
+    --syntax-attribute-value-color: var(--color-green-500);
+
+    /*
+     * Keywords — red, except the declaring ones gruvbox paints aqua. The
+     * control / operator variants don't fall back to --syntax-keyword-color,
+     * so they're spelled out.
+     */
+    --syntax-keyword-color: var(--color-red-500); /* Statement */
+    --syntax-control-keyword-color: var(
+      --color-red-500
+    ); /* Conditional, Repeat */
+    --syntax-operator-keyword-color: var(--color-red-500); /* luaIn */
+    --syntax-definition-keyword-color: var(--color-teal-500); /* jsFunction */
+    --syntax-module-keyword-color: var(--color-teal-500); /* Include */
+    --syntax-self-color: var(--color-orange-500); /* builtin, like goBuiltins */
+    --syntax-null-color: var(--color-violet-500);
+    --syntax-atom-color: var(--color-violet-500);
+    --syntax-unit-color: var(--color-violet-500);
+    --syntax-modifier-color: var(--color-orange-500); /* StorageClass */
+
+    /* Operators — gruvbox links Operator to Normal */
+    --syntax-operator-color: var(--editor-foreground-color);
+
+    /* Punctuation — fg3, tag brackets blue (htmlTag) */
+    --syntax-punctuation-color: var(--color-neutral-300);
+    --syntax-separator-color: var(--color-neutral-300);
+    --syntax-square-bracket-color: var(--color-neutral-300);
+    --syntax-paren-color: var(--color-neutral-300);
+    --syntax-brace-color: var(--color-neutral-300);
+    --syntax-bracket-color: var(--color-neutral-300);
+    --syntax-angle-bracket-color: var(--color-blue-500);
+
+    /* Headings & prose */
+    --syntax-heading-color: var(--color-green-500); /* markdownH1 */
+    --syntax-heading-3-color: var(--color-yellow-500);
+    --syntax-heading-4-color: var(--color-yellow-500);
+    --syntax-heading-5-color: var(--color-yellow-500);
+    --syntax-heading-5-font-weight: normal;
+    --syntax-heading-6-color: var(--color-yellow-500);
+    --syntax-heading-6-font-weight: normal;
+    --syntax-content-separator-color: var(
+      --color-neutral-500
+    ); /* markdownRule */
+    --syntax-list-color: var(--color-neutral-500);
+    --syntax-quote-color: var(--color-neutral-500); /* markdownBlockquote */
+    --syntax-emphasis-color: var(--color-neutral-300); /* markdownItalic */
+    --syntax-strong-color: var(--color-neutral-50);
+    --syntax-link-color: var(--color-neutral-500); /* markdownLinkText */
+    --syntax-monospace-color: var(--color-teal-500); /* markdownCode */
+
+    /* Diffs & meta */
+    --syntax-inserted-color: var(--color-green-500); /* DiffAdd */
+    --syntax-deleted-color: var(--color-red-500); /* DiffDelete */
+    --syntax-changed-color: var(--color-teal-500); /* DiffChange */
+    --syntax-document-meta-color: var(--color-neutral-300);
+    --syntax-annotation-color: var(--color-blue-500); /* javaAnnotation */
+    --syntax-processing-instruction-color: var(--color-teal-500); /* PreProc */
+    --syntax-meta-color: var(--color-neutral-500);
+
+    /* Diagnostics */
+    --syntax-invalid-color: var(--color-red-500); /* Error */
+    --syntax-invalid-border-bottom: 1px dotted var(--color-red-500);
+  }
+
+  :root:has(body.acrylic-window) {
+    --editor-background-color: transparent;
+  }
+}

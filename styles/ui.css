@@ -1,0 +1,170 @@
+@layer theme.ui {
+  /*
+   * Gruvbox — app chrome.
+   *
+   * tokens.css already remaps the neutral ramp onto gruvbox's bg/fg scale, so
+   * the app's dark-mode defaults land on gruvbox surfaces without help: the
+   * sidebar on bg1, the note list on bg0_soft, the editor and page on bg0.
+   * What's left here are the places the ramps can't reach: variables pointing
+   * at a ramp gruvbox has no hue for (zinc, emerald, rose, cyan, sky, amber),
+   * the few the app hard-codes, and the accents that should be gruvbox blue
+   * itself rather than a washed-out tint of it.
+   */
+  :root {
+    /*-------------------
+      Brand Colors
+    --------------------*/
+    --primary-color: var(--color-blue-500);
+    --primary-color-hover: var(--color-blue-400);
+    --primary-color-focus: var(--color-blue-400);
+    --primary-color-down: var(--color-blue-600);
+    --primary-color-active: var(--color-blue-600);
+    --secondary-color: hsl(var(--hsl-neutral-400) / 80%);
+    --secondary-color-hover: var(--color-neutral-800);
+    --secondary-color-focus: var(--color-neutral-800);
+    --secondary-color-down: var(--color-neutral-700);
+    --secondary-color-active: var(--color-neutral-700);
+
+    /*-------------------
+      Focused Input
+    --------------------*/
+    --focused-form-border-color: var(--color-blue-500);
+    --focused-form-muted-border-color: hsl(var(--hsl-blue-500) / 60%);
+    --focused-outline-color: hsl(var(--hsl-blue-500) / 30%);
+
+    /*-------------------
+      Links
+    --------------------*/
+    --link-hover-color: var(--color-blue-400);
+
+    /*-------------------
+      Highlighted Text
+    --------------------*/
+    --highlight-background: hsl(var(--hsl-blue-500) / 30%);
+    --highlight-color: var(--color-neutral-50);
+
+    /*-------------------
+      Emotive Colors
+
+      Positive and negative already resolve through green and red. Info and
+      warning reach for cyan / sky / amber, which gruvbox has no hue for, so
+      they're pointed at aqua and yellow instead.
+    --------------------*/
+    --info-color: var(--color-teal-500);
+    --info-background-color: hsl(var(--hsl-teal-500) / 15%);
+    --info-border-color: hsl(var(--hsl-teal-500) / 60%);
+    --info-header-color: var(--color-teal-400);
+    --info-text-color: var(--color-teal-200);
+
+    --warning-color: var(--color-yellow-500);
+    --warning-background-color: hsl(var(--hsl-yellow-500) / 15%);
+    --warning-header-color: var(--color-yellow-400);
+    --warning-text-color: var(--color-yellow-200);
+
+    /*-------------------
+      Borders
+    --------------------*/
+    --solid-border-color: var(--color-neutral-800);
+    --solid-selected-border-color: var(--color-neutral-700);
+    --solid-internal-border-color: var(--color-neutral-900);
+
+    /*-------------------
+      Header
+    --------------------*/
+    --header-text-color: var(--color-yellow-500);
+
+    /*-------------------
+      Label
+
+      The app hard-codes these two as light greys rather than deriving them
+      from a ramp, so a dark theme has to restate them.
+    --------------------*/
+    --label-hover-background-color: var(--color-neutral-800);
+    --label-active-hover-background-color: var(--color-neutral-700);
+
+    /*-------------------
+      Side Bar
+    --------------------*/
+    --sidebar-menu-item-inactive-background: hsl(var(--hsl-blue-500) / 18%);
+    --sidebar-menu-item-active-background: hsl(var(--hsl-blue-500) / 32%);
+    --sidebar-notification-view-color: hsl(var(--hsl-neutral-950));
+
+    /*-------------------
+      Note List Bar
+    --------------------*/
+    --note-list-view-item-selected-background: hsl(var(--hsl-blue-500) / 20%);
+    --note-list-view-item-active-background: hsl(var(--hsl-blue-500) / 40%);
+
+    /*-------------------
+      Preferences
+    --------------------*/
+    --preferences-sidebar-item-active-background: hsl(var(--hsl-blue-500) / 20%);
+
+    /*-------------------
+      Note Status
+    --------------------*/
+    --note-status-active: hsl(var(--hsl-neutral-400));
+    --note-status-onhold: hsl(var(--hsl-yellow-500));
+    --note-status-completed: hsl(var(--hsl-teal-500));
+    --note-status-dropped: hsl(var(--hsl-red-500));
+
+    /*-------------------
+      Tags
+
+      The chromatic tag colors resolve through the ramps already. These three
+      are the neutral ones, which read off gray / slate — so they're restated
+      on gruvbox's bg/fg scale, mirroring the app's own stop pattern.
+    --------------------*/
+    --tag-dark-default-background-color: hsl(var(--hsl-neutral-400) / 10%);
+    --tag-dark-default-border-color: hsl(var(--hsl-neutral-400) / 20%);
+    --tag-dark-default-text-color: hsl(var(--hsl-neutral-400));
+    --tag-dark-default-active-background-color: hsl(var(--hsl-neutral-400) / 20%);
+    --tag-dark-default-active-border-color: hsl(var(--hsl-neutral-400) / 30%);
+    --tag-dark-default-active-text-color: hsl(var(--hsl-neutral-300));
+    --tag-dark-default-circular-background-color: hsl(var(--hsl-neutral-400) / 30%);
+    --tag-dark-default-circular-border-color: hsl(var(--hsl-neutral-400));
+
+    --tag-dark-grey-background-color: hsl(var(--hsl-neutral-500) / 50%);
+    --tag-dark-grey-border-color: hsl(var(--hsl-neutral-500) / 40%);
+    --tag-dark-grey-text-color: hsl(var(--hsl-neutral-400));
+    --tag-dark-grey-active-background-color: hsl(var(--hsl-neutral-400) / 40%);
+    --tag-dark-grey-active-border-color: hsl(var(--hsl-neutral-400) / 40%);
+    --tag-dark-grey-active-text-color: hsl(var(--hsl-neutral-300));
+    --tag-dark-grey-circular-background-color: hsl(var(--hsl-neutral-500) / 50%);
+    --tag-dark-grey-circular-border-color: hsl(var(--hsl-neutral-500));
+
+    --tag-dark-black-background-color: hsl(var(--hsl-neutral-950) / 40%);
+    --tag-dark-black-border-color: hsl(var(--hsl-neutral-300) / 30%);
+    --tag-dark-black-text-color: hsl(var(--hsl-neutral-400));
+    --tag-dark-black-active-background-color: hsl(var(--hsl-neutral-800) / 50%);
+    --tag-dark-black-active-border-color: hsl(var(--hsl-neutral-300) / 40%);
+    --tag-dark-black-active-text-color: hsl(var(--hsl-neutral-300));
+    --tag-dark-black-circular-background-color: hsl(var(--hsl-neutral-950) / 40%);
+    --tag-dark-black-circular-border-color: hsl(var(--hsl-neutral-400) / 40%);
+
+    /*-------------------
+      Task Progress
+    --------------------*/
+    --task-progress-view-border-color: hsl(var(--hsl-neutral-100) / 10%);
+    --task-progress-view-background-color: hsl(var(--hsl-neutral-950) / 30%);
+    --task-progress-view-foreground-color: hsl(var(--hsl-neutral-100) / 60%);
+  }
+
+  /*-------------------
+    Acrylic background window
+  --------------------*/
+
+  :root:has(body.acrylic-window) {
+    --page-background: transparent;
+    --sidebar-background: hsl(var(--hsl-neutral-900) / 60%);
+    --note-list-bar-background: hsl(var(--hsl-neutral-900) / 40%);
+    --editor-background: hsl(var(--hsl-neutral-950) / 80%);
+    --editor-drawer-background: hsl(var(--hsl-neutral-900) / 80%);
+    --inline-dropdown-menu-background: hsl(var(--hsl-neutral-900));
+    --vertical-menu-background: hsl(var(--hsl-neutral-900));
+  }
+
+  :root:has(body.acrylic-window.platform-win32) {
+    --page-background: hsl(var(--hsl-neutral-950) / 40%);
+  }
+}
