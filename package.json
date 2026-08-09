@@ -16,8 +16,8 @@
     "dark",
     "gruvbox"
   ],
-  "repository": "https://github.com/inkdropapp/inkdrop-gruvbox",
-  "author": "inkdropapp",
+  "repository": "https://github.com/inkdropapp/gruvbox",
+  "author": "Takuya Matsuyama <t@inkdrop.app>",
   "license": "MIT",
   "scripts": {
     "prepublishOnly": "generate-palette"
