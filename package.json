@@ -1,6 +1,6 @@
 {
   "name": "gruvbox",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "theme": true,
   "themeAppearance": "dark",
   "description": "Retro groove color scheme for Inkdrop, based on morhetz/gruvbox",
