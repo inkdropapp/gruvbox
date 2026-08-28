@@ -12,14 +12,22 @@
     /* GFM alerts — note/tip/warning/caution already resolve through the ramps */
     --gfm-alert-important: var(--color-violet-500);
 
+    /* Links (was --color-accent-fg) */
+    --mde-preview-link-color: var(--color-cyan-500);
+
+    /* Lists */
+    --mde-preview-list-marker-color: hsl(var(--hsl-teal-500));
+    --mde-preview-list-marker-2-color: hsl(var(--hsl-orange-500));
+    --mde-preview-list-marker-3-color: hsl(var(--hsl-blue-500));
+
     /* Headings */
     --mde-preview-heading-color: var(--color-green-500);
     --mde-preview-heading-border-color: var(--color-neutral-800);
     --mde-preview-heading-muted-text-color: var(--color-neutral-400);
 
     /* Prose */
-    --mde-preview-strong-color: var(--color-neutral-50);
-    --mde-preview-em-color: var(--color-neutral-300);
+    --mde-preview-strong-color: var(--color-yellow-500);
+    --mde-preview-em-color: var(--color-violet-500);
     --mde-preview-blockquote-text-color: var(--color-neutral-400);
     --mde-preview-blockquote-border-color: var(--color-neutral-700);
     --mde-preview-hr-background-color: var(--color-neutral-800);
@@ -31,10 +39,14 @@
     --mde-preview-codeblock-border-color: var(--color-neutral-800);
     --mde-preview-codeblock-meta-background-color: var(--color-neutral-900);
     --mde-preview-codeblock-meta-text-color: var(--color-neutral-400);
-    --mde-preview-inline-code-text-color: var(--color-teal-500); /* markdownCode */
+    --mde-preview-inline-code-text-color: var(
+      --color-teal-500
+    ); /* markdownCode */
     --mde-preview-inline-code-border-width: 1px;
     --mde-preview-inline-code-border-color: hsl(var(--hsl-neutral-700) / 60%);
-    --mde-preview-inline-code-background-color: hsl(var(--hsl-neutral-800) / 40%);
+    --mde-preview-inline-code-background-color: hsl(
+      var(--hsl-neutral-800) / 40%
+    );
 
     /* Tables */
     --mde-preview-table-border-color: var(--color-neutral-800);
@@ -42,7 +54,9 @@
     --mde-preview-table-head-text-color: var(--color-yellow-500);
     --mde-preview-table-head-background-color: var(--color-neutral-900);
     --mde-preview-table-row-background-color: transparent;
-    --mde-preview-table-row-stripe-background-color: hsl(var(--hsl-neutral-900) / 50%);
+    --mde-preview-table-row-stripe-background-color: hsl(
+      var(--hsl-neutral-900) / 50%
+    );
 
     /* Keyboard keys */
     --mde-preview-kbd-background-color: var(--color-neutral-800);
@@ -51,7 +65,9 @@
     --mde-preview-kbd-text-color: var(--color-neutral-200);
 
     /* Mark */
-    --mde-preview-inline-mark-background-color: hsl(var(--hsl-yellow-500) / 25%);
+    --mde-preview-inline-mark-background-color: hsl(
+      var(--hsl-yellow-500) / 25%
+    );
     --mde-preview-inline-mark-underline-color: var(--color-yellow-500);
 
     /* Images & footnotes */
