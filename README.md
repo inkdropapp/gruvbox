@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repository has moved to [inkdropapp/plugins](https://github.com/inkdropapp/plugins): [`packages/gruvbox`](https://github.com/inkdropapp/plugins/tree/main/packages/gruvbox). It is archived and read-only; please open issues and pull requests there.
+
 # gruvbox
 
 [Gruvbox](https://github.com/morhetz/gruvbox) for Inkdrop — a retro groove color
